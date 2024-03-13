@@ -56,6 +56,16 @@ public class SG_AutomationHandler {
             WebElement receiveLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("접수시스템")));
             receiveLink.click();
 
+            //출장구분 사내
+            //수리기사 김동현
+            //제품명 조회 누르고 TTI 쓰고 검색 누르고 제품 누르기
+            //이름    대한통운에서 받어
+            //핸드폰   대한통운에서 받어
+            //주소는 손으로 해
+            //메모 내용 추가 운송장번호랑 추가사항 추가하고
+            // 접수버튼
+            //새로고침
+            //접수번호 고객명 검색하고 체크박스 체크하고 인쇄 버튼 인쇄하기 누르고 인쇄
             // 다른 작업 수행...
 
             // 대기 후 프로그램 종료 방지
