@@ -7,15 +7,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.*;
 import java.util.concurrent.TimeUnit;
 public class SG_AutomationHandler {
+    private GUI gui;
+
+    public SG_AutomationHandler(GUI gui) {
+        this.gui = gui;
+    }
 
     public void processWebAutomation(String[] credentials) {
         WebDriver driver = null;
-
         if (credentials != null && credentials.length == 2) {
             String id = credentials[0];
             String password = credentials[1];
+
             System.out.println("ID: " + id);
             System.out.println("Password: " + password);
         } else {
@@ -55,11 +61,16 @@ public class SG_AutomationHandler {
             // 버튼이 클릭 가능한 상태가 되면 클릭
             WebElement receiveLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("접수시스템")));
             receiveLink.click();
-
+            System.out.println("여기옴?");
+            // GUI 갱신
+            gui.updateGUI();
             //출장구분 사내
             //수리기사 김동현
             //제품명 조회 누르고 TTI 쓰고 검색 누르고 제품 누르기
-            //이름    대한통운에서 받어
+            //이름    입력받아
+            System.out.println("이름입력받니");
+//            SwingUtilities.invokeLater(NameButton::new);
+            System.out.println("이름입력받았니");
             //핸드폰   대한통운에서 받어
             //주소는 손으로 해
             //메모 내용 추가 운송장번호랑 추가사항 추가하고
